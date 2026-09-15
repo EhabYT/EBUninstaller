@@ -2026,6 +2026,7 @@ namespace BulkCrapUninstaller.Forms
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Active Network Sockets & Port Security Auditor...", null, (s, e) => OpenSocketHealthAuditor()));
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Authenticode Binary Signatures & Integrity Auditor...", null, (s, e) => OpenAuthenticodeAuditor()));
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Security Center (WSC) Providers Auditor...", null, (s, e) => OpenWscProviderAuditor()));
+                menuHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Memory Diagnostic & RAM Hardware Auditor...", null, (s, e) => OpenMemoryDiagnosticAudit()));
 
                 // Group 2: Deep System Cleaning & Residuals
                 var menuCleaners = new ToolStripMenuItem("Deep System Cleaning & Residuals");
@@ -2066,6 +2067,8 @@ namespace BulkCrapUninstaller.Forms
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("BranchCache & Peer Distribution Cache...", null, (s, e) => OpenBranchCacheCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Connected Devices Platform (CDP) Activity History...", null, (s, e) => OpenActivityHistoryCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Component Store Staging & CBS Servicing Cache...", null, (s, e) => OpenComponentStoreStagingCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Storage Sense & Downloads Retention Policy...", null, (s, e) => OpenStorageSensePolicy()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("WER ReportArchive & Hang Diagnostics Cleaner...", null, (s, e) => OpenWerReportArchiveCleaner()));
 
                 // Group 3: Advanced Removal & Multi-User
                 var menuUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
@@ -2102,6 +2105,7 @@ namespace BulkCrapUninstaller.Forms
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Firewall Port Matrix & Public Exposure Auditor...", null, (s, e) => OpenFirewallPortMatrix()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("COM+ Applications & Component Services...", null, (s, e) => OpenComPlusCatalogAuditor()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
+                menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
 
                 // Group 5: Backup, Security & Audit
                 var menuBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
@@ -2151,6 +2155,7 @@ namespace BulkCrapUninstaller.Forms
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Active Network Sockets & Port Security Auditor...", null, (s, e) => OpenSocketHealthAuditor()));
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Authenticode Binary Signatures & Integrity Auditor...", null, (s, e) => OpenAuthenticodeAuditor()));
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Security Center (WSC) Providers Auditor...", null, (s, e) => OpenWscProviderAuditor()));
+                    tmHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Memory Diagnostic & RAM Hardware Auditor...", null, (s, e) => OpenMemoryDiagnosticAudit()));
 
                     var tmCleaners = new ToolStripMenuItem("Deep System Cleaning & Residuals");
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
@@ -2190,6 +2195,8 @@ namespace BulkCrapUninstaller.Forms
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("BranchCache & Peer Distribution Cache...", null, (s, e) => OpenBranchCacheCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Connected Devices Platform (CDP) Activity History...", null, (s, e) => OpenActivityHistoryCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Component Store Staging & CBS Servicing Cache...", null, (s, e) => OpenComponentStoreStagingCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Storage Sense & Downloads Retention Policy...", null, (s, e) => OpenStorageSensePolicy()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("WER ReportArchive & Hang Diagnostics Cleaner...", null, (s, e) => OpenWerReportArchiveCleaner()));
 
                     var tmUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
@@ -2224,6 +2231,7 @@ namespace BulkCrapUninstaller.Forms
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Firewall Port Matrix & Public Exposure Auditor...", null, (s, e) => OpenFirewallPortMatrix()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("COM+ Applications & Component Services...", null, (s, e) => OpenComPlusCatalogAuditor()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
+                    tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
 
                     var tmBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
@@ -2960,6 +2968,30 @@ namespace BulkCrapUninstaller.Forms
         private void OpenComponentStoreStagingCleaner()
         {
             using var dlg = new BulkCrapUninstaller.Forms.Windows.ComponentStoreStagingCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenMemoryDiagnosticAudit()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.MemoryDiagnosticAuditWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenStorageSensePolicy()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.StorageSensePolicyAuditorWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenNetBiosCacheFlusher()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.NetBiosCacheFlusherWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenWerReportArchiveCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.WerReportArchiveCleanerWindow();
             dlg.ShowDialog(this);
         }
         #endregion
