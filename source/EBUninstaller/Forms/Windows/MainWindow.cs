@@ -2027,6 +2027,7 @@ namespace BulkCrapUninstaller.Forms
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Authenticode Binary Signatures & Integrity Auditor...", null, (s, e) => OpenAuthenticodeAuditor()));
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Security Center (WSC) Providers Auditor...", null, (s, e) => OpenWscProviderAuditor()));
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Memory Diagnostic & RAM Hardware Auditor...", null, (s, e) => OpenMemoryDiagnosticAudit()));
+                menuHealth.DropDownItems.Add(new ToolStripMenuItem("Connected Experiences & Telemetry (DiagTrack) Hardening...", null, (s, e) => OpenDiagTrackHardening()));
 
                 // Group 2: Deep System Cleaning & Residuals
                 var menuCleaners = new ToolStripMenuItem("Deep System Cleaning & Residuals");
@@ -2071,6 +2072,8 @@ namespace BulkCrapUninstaller.Forms
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("WER ReportArchive & Hang Diagnostics Cleaner...", null, (s, e) => OpenWerReportArchiveCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Cryptnet URL & CRL Certificate Cache Cleaner...", null, (s, e) => OpenCryptnetCacheCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Windows Font Cache & WPF Integrity Rebuilder...", null, (s, e) => OpenFontCacheRepair()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Most Recently Used (MRU) History & Explorer Traces...", null, (s, e) => OpenMruHistoryCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Taskbar Jump Lists & Recent Destinations Cleaner...", null, (s, e) => OpenJumpListCleaner()));
 
                 // Group 3: Advanced Removal & Multi-User
                 var menuUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
@@ -2109,6 +2112,7 @@ namespace BulkCrapUninstaller.Forms
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Print Spooler Health & Stuck Job Repair...", null, (s, e) => OpenPrintSpoolerRepair()));
+                menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("DNS Client Resolver Cache & Health Subsystem...", null, (s, e) => OpenDnsCacheHealth()));
 
                 // Group 5: Backup, Security & Audit
                 var menuBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
@@ -2160,6 +2164,7 @@ namespace BulkCrapUninstaller.Forms
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Authenticode Binary Signatures & Integrity Auditor...", null, (s, e) => OpenAuthenticodeAuditor()));
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Security Center (WSC) Providers Auditor...", null, (s, e) => OpenWscProviderAuditor()));
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Memory Diagnostic & RAM Hardware Auditor...", null, (s, e) => OpenMemoryDiagnosticAudit()));
+                    tmHealth.DropDownItems.Add(new ToolStripMenuItem("Connected Experiences & Telemetry (DiagTrack) Hardening...", null, (s, e) => OpenDiagTrackHardening()));
 
                     var tmCleaners = new ToolStripMenuItem("Deep System Cleaning & Residuals");
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
@@ -2203,6 +2208,8 @@ namespace BulkCrapUninstaller.Forms
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("WER ReportArchive & Hang Diagnostics Cleaner...", null, (s, e) => OpenWerReportArchiveCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Cryptnet URL & CRL Certificate Cache Cleaner...", null, (s, e) => OpenCryptnetCacheCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Windows Font Cache & WPF Integrity Rebuilder...", null, (s, e) => OpenFontCacheRepair()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Most Recently Used (MRU) History & Explorer Traces...", null, (s, e) => OpenMruHistoryCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Taskbar Jump Lists & Recent Destinations Cleaner...", null, (s, e) => OpenJumpListCleaner()));
 
                     var tmUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
@@ -2239,6 +2246,7 @@ namespace BulkCrapUninstaller.Forms
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Print Spooler Health & Stuck Job Repair...", null, (s, e) => OpenPrintSpoolerRepair()));
+                    tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("DNS Client Resolver Cache & Health Subsystem...", null, (s, e) => OpenDnsCacheHealth()));
 
                     var tmBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
@@ -3024,6 +3032,30 @@ namespace BulkCrapUninstaller.Forms
         private void OpenPrintSpoolerRepair()
         {
             using var dlg = new BulkCrapUninstaller.Forms.PrintSpoolerHealthRepairWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenDiagTrackHardening()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.WindowsTelemetryDiagTrackWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenMruHistoryCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.MruRecentHistoryCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenJumpListCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.TaskbarJumpListCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenDnsCacheHealth()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.DnsClientCacheHealthWindow();
             dlg.ShowDialog(this);
         }
         #endregion
