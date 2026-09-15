@@ -2069,6 +2069,8 @@ namespace BulkCrapUninstaller.Forms
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Component Store Staging & CBS Servicing Cache...", null, (s, e) => OpenComponentStoreStagingCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Storage Sense & Downloads Retention Policy...", null, (s, e) => OpenStorageSensePolicy()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("WER ReportArchive & Hang Diagnostics Cleaner...", null, (s, e) => OpenWerReportArchiveCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Cryptnet URL & CRL Certificate Cache Cleaner...", null, (s, e) => OpenCryptnetCacheCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Windows Font Cache & WPF Integrity Rebuilder...", null, (s, e) => OpenFontCacheRepair()));
 
                 // Group 3: Advanced Removal & Multi-User
                 var menuUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
@@ -2106,6 +2108,7 @@ namespace BulkCrapUninstaller.Forms
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("COM+ Applications & Component Services...", null, (s, e) => OpenComPlusCatalogAuditor()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
+                menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Print Spooler Health & Stuck Job Repair...", null, (s, e) => OpenPrintSpoolerRepair()));
 
                 // Group 5: Backup, Security & Audit
                 var menuBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
@@ -2120,6 +2123,7 @@ namespace BulkCrapUninstaller.Forms
                 menuBackup.DropDownItems.Add(new ToolStripMenuItem("Windows Certificate Store Residuals & Expired Certs...", null, (s, e) => OpenCertStoreCleaner()));
                 menuBackup.DropDownItems.Add(new ToolStripMenuItem("CNG & CryptoAPI Cryptographic Providers Auditor...", null, (s, e) => OpenCngProviderAuditor()));
                 menuBackup.DropDownItems.Add(new ToolStripMenuItem("VSS Restore Point Storage Quota & Allocation...", null, (s, e) => OpenRestorePointQuota()));
+                menuBackup.DropDownItems.Add(new ToolStripMenuItem("Installed OEM Device Driver Backup...", null, (s, e) => OpenDeviceDriverBackup()));
 
                 proDropDown.DropDownItems.AddRange(new ToolStripItem[]
                 {
@@ -2197,6 +2201,8 @@ namespace BulkCrapUninstaller.Forms
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Component Store Staging & CBS Servicing Cache...", null, (s, e) => OpenComponentStoreStagingCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Storage Sense & Downloads Retention Policy...", null, (s, e) => OpenStorageSensePolicy()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("WER ReportArchive & Hang Diagnostics Cleaner...", null, (s, e) => OpenWerReportArchiveCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Cryptnet URL & CRL Certificate Cache Cleaner...", null, (s, e) => OpenCryptnetCacheCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Windows Font Cache & WPF Integrity Rebuilder...", null, (s, e) => OpenFontCacheRepair()));
 
                     var tmUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
@@ -2232,6 +2238,7 @@ namespace BulkCrapUninstaller.Forms
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("COM+ Applications & Component Services...", null, (s, e) => OpenComPlusCatalogAuditor()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
+                    tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Print Spooler Health & Stuck Job Repair...", null, (s, e) => OpenPrintSpoolerRepair()));
 
                     var tmBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
@@ -2245,6 +2252,7 @@ namespace BulkCrapUninstaller.Forms
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("Windows Certificate Store Residuals & Expired Certs...", null, (s, e) => OpenCertStoreCleaner()));
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("CNG & CryptoAPI Cryptographic Providers Auditor...", null, (s, e) => OpenCngProviderAuditor()));
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("VSS Restore Point Storage Quota & Allocation...", null, (s, e) => OpenRestorePointQuota()));
+                    tmBackup.DropDownItems.Add(new ToolStripMenuItem("Installed OEM Device Driver Backup...", null, (s, e) => OpenDeviceDriverBackup()));
 
                     toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Quick System Optimization Wizard...", null, (s, e) => OpenOptimizationWizard()));
                     toolsToolStripMenuItem.DropDownItems.Insert(1, tmHealth);
@@ -2992,6 +3000,30 @@ namespace BulkCrapUninstaller.Forms
         private void OpenWerReportArchiveCleaner()
         {
             using var dlg = new BulkCrapUninstaller.Forms.Windows.WerReportArchiveCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenFontCacheRepair()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.FontCacheRepairWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenDeviceDriverBackup()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.DeviceDriverBackupWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenCryptnetCacheCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.CryptnetUrlCacheCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenPrintSpoolerRepair()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.PrintSpoolerHealthRepairWindow();
             dlg.ShowDialog(this);
         }
         #endregion
