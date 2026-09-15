@@ -412,7 +412,7 @@
     <value>Původní nastavení</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Odinstalovat BCUninstaller</value>
+    <value>Odinstalovat EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;O Programu</value>
@@ -427,7 +427,7 @@
     <value>Vytvořit zálohu registru</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="olvColumnIs64.Text" xml:space="preserve">
     <value>64bit</value>
@@ -442,7 +442,7 @@
     <value>Hodnotit...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="toolStripButton8.Text" xml:space="preserve">
     <value>Pomoc</value>

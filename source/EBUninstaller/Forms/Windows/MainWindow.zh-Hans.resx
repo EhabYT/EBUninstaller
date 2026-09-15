@@ -133,7 +133,7 @@
     <value>关于</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="olvColumnPublisher.Text" xml:space="preserve">
     <value>发布者</value>
@@ -220,7 +220,7 @@
     <value>帮助</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>高级筛选器</value>
@@ -574,7 +574,7 @@
     <value>重置设置</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>卸载BCUninstaller</value>
+    <value>卸载EBUninstaller Pro</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>帮助</value>

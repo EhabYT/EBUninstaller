@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Toplu Düzeltme Kaldırıcı)</value>
+    <value>EBUninstaller Pro (Toplu Düzeltme Kaldırıcı)</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>Versiyon:</value>
@@ -180,7 +180,7 @@
     <value>Çevirmenler</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>BCUninstaller Hakkında (Toplu Düzeltme Kaldırıcı)</value>
+    <value>EBUninstaller Pro Hakkında (Toplu Düzeltme Kaldırıcı)</value>
   </data>
   <data name="linkLabel9.Text" xml:space="preserve">
     <value>es.exe (Her şey için komut satırı)</value>

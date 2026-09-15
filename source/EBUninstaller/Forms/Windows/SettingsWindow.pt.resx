@@ -194,7 +194,7 @@ Utilize caminhos de diretório completos, um caminho por linha. Caminhos inváli
     <value>Diversos</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Configurações do Bulk Crap Uninstaller </value>
+    <value>Configurações do EBUninstaller Pro </value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
     <value>Mostra sempre que um determinado programa não é de confiança.</value>

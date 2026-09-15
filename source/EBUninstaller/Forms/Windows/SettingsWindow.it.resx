@@ -200,7 +200,7 @@ I percorsi non validi e non esistenti saranno ignorati.</value>
     <value>Varie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Impostazioni Bulk Crap Uninstaller</value>
+    <value>Impostazioni EBUninstaller Pro</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>

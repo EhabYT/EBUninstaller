@@ -205,7 +205,7 @@
     <value>ヘルプ</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>高度なフィルタリング</value>
@@ -565,7 +565,7 @@
     <value>設定をリセット</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>BCUninstallerをアンインストール</value>
+    <value>EBUninstaller Proをアンインストール</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;詳細</value>
@@ -583,7 +583,7 @@
     <value>レジストリバックアップを作成</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="createRestorePointToolStripMenuItem.Text" xml:space="preserve">
     <value>新しい復元ポイントを作成</value>

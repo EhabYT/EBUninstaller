@@ -205,7 +205,7 @@
     <value>Ajuda</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>Filtragem avançada</value>
@@ -517,7 +517,7 @@
     <value>Redefinir configurações</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Desinstalar o BCUninstaller</value>
+    <value>Desinstalar o EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Sobre</value>
@@ -535,7 +535,7 @@
     <value>Criar cópia de segurança do registro</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="slantcoToolStripMenuItem.Text" xml:space="preserve">
     <value>Slant.co</value>

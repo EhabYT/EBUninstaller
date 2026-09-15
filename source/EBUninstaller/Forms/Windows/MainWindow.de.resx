@@ -400,7 +400,7 @@
     <value>Einstellungen zurücksetzen</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>BCUninstaller deinstallieren</value>
+    <value>EBUninstaller Pro deinstallieren</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>Ü&amp;ber</value>
@@ -430,7 +430,7 @@
     <value>Autostart verhindern</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="olvColumnRating.Text" xml:space="preserve">
     <value>Benutzer-Bewertung</value>
@@ -442,7 +442,7 @@
     <value>Bewerten...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Google</value>

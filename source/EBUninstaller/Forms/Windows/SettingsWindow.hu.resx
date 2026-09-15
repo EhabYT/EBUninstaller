@@ -199,7 +199,7 @@ Soronként egy teljes elérési útvonalat adjon meg. Az érvénytelen útvonala
     <value>Vegyes</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>A Bulk Crap Uninstaller beállításai</value>
+    <value>A EBUninstaller Pro beállításai</value>
   </data>
   <data name="checkBoxScanSteam.Text" xml:space="preserve">
     <value>Steam</value>

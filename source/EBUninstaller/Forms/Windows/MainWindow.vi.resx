@@ -205,7 +205,7 @@
     <value>Trợ giúp</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>Bộ lọc nâng cao</value>
@@ -568,7 +568,7 @@
     <value>Thiết đặt lại cài đặt gốc</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Gỡ cài đặt BCUninstaller</value>
+    <value>Gỡ cài đặt EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>Giới thiệu (&amp;A)</value>
@@ -586,7 +586,7 @@
     <value>Tạo bản sao lưu Registry</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
     <value>Tự động căn chỉnh kích thước các cột</value>

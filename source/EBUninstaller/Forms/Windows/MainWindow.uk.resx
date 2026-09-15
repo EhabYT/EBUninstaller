@@ -199,7 +199,7 @@
     <value>Довідка</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>Розширена фільтрація</value>
@@ -442,7 +442,7 @@
     <value>Скинути налаштування за замовчуванням</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Видалити BCUninstaller</value>
+    <value>Видалити EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Про програму</value>
@@ -460,7 +460,7 @@
     <value>Створити резервну копію реєстру</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Google</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>الاصدار:</value>
@@ -180,6 +180,6 @@
     <value>المترجمون</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value> BCUninstaller (Bulk Crap Uninstaller) حول</value>
+    <value> EBUninstaller Pro حول</value>
   </data>
 </root>

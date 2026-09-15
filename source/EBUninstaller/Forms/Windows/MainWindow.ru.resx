@@ -199,7 +199,7 @@
     <value>Справка</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>Расширенный фильтр</value>
@@ -442,7 +442,7 @@
     <value>Сбросить настройки по умолчанию</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Самоудаление BCUninstaller</value>
+    <value>Самоудаление EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;О программе</value>
@@ -460,7 +460,7 @@
     <value>Создать бэкап реестра</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Google</value>

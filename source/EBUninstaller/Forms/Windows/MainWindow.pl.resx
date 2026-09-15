@@ -418,7 +418,7 @@
     <value>Resetuj ustawienia</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Odinstaluj BCUninstaller</value>
+    <value>Odinstaluj EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;O programie</value>
@@ -436,7 +436,7 @@
     <value>Utwórz kopię rejestru</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="olvColumnRating.Text" xml:space="preserve">
     <value>Ocena użytkowników</value>
@@ -454,7 +454,7 @@
     <value>Zaawansowane filtrowanie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Zaawansowane...</value>

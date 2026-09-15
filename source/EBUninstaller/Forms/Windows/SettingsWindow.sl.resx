@@ -190,7 +190,7 @@ Uporabite polne poti imenikov, eno pot na vrstico. Neveljavne poti in neobstojeÄ
     <value>Razno</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nastavitve BCUninstallerja</value>
+    <value>Nastavitve EBUninstaller Proja</value>
   </data>
   <data name="checkBoxRatings.Text" xml:space="preserve">
     <value>OmogoÄi uporabnikove ocene aplikacij</value>

@@ -193,7 +193,7 @@ BCU будет ждать завершения одной команды для 
     <value>Прочее</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Настройки Bulk Crap Uninstaller</value>
+    <value>Настройки EBUninstaller Pro</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
     <value>Всегда показывать мусорные с низким рейтингом</value>

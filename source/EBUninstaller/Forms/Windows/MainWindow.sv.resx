@@ -205,7 +205,7 @@
     <value>Hjälp</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>Avancerad filtrering</value>
@@ -568,7 +568,7 @@
     <value>Återställ inställningar</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>Avinstallera BCUninstaller</value>
+    <value>Avinstallera EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Om</value>
@@ -586,6 +586,6 @@
     <value>Skapa backup av registret</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
 </root>

@@ -193,7 +193,7 @@ BCU чекатиме завершення поточної команди, пе�
     <value>Різне</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Налаштування Bulk Crap Uninstaller</value>
+    <value>Налаштування EBUninstaller Pro</value>
   </data>
   <data name="checkBoxShowAllBadJunk.Text" xml:space="preserve">
     <value>Завжди показувати сміття з низькою достовірністю</value>

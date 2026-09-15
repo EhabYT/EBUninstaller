@@ -205,7 +205,7 @@
     <value>幫助</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>BCUninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="buttonAdvFiltering.Text" xml:space="preserve">
     <value>進階選項</value>
@@ -568,7 +568,7 @@
     <value>重置設定</value>
   </data>
   <data name="uninstallBCUninstallToolstripMenuItem.Text" xml:space="preserve">
-    <value>解除安裝BCUninstaller</value>
+    <value>解除安裝EBUninstaller Pro</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>關於</value>
@@ -586,7 +586,7 @@
     <value>新增註冊表備份</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bulk Crap Uninstaller</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="autosizeAllColumnsToolStripMenuItem.Text" xml:space="preserve">
     <value>重設所有欄位</value>

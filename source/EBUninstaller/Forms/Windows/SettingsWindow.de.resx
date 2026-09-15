@@ -175,7 +175,7 @@ BCU wartet mit der nächsten Ausführung, bis der aktuell ausgeführte Befehl ab
     <value>Verschiedenes</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>BCUninstaller Einstellungen</value>
+    <value>EBUninstaller Pro Einstellungen</value>
   </data>
   <data name="tabPageFolders.Text" xml:space="preserve">
     <value>Ordner</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>Versione:</value>
@@ -181,7 +181,7 @@
     <value>Traduttori</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Info su BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>Info su EBUninstaller Pro</value>
   </data>
   <data name="linkLabel9.Text" xml:space="preserve">
     <value>es.exe (CLI per Everything)</value>

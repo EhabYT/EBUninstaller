@@ -163,7 +163,7 @@
     <value>Traducteurs</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>A propos de BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>A propos de EBUninstaller Pro</value>
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
     <value>Copyright</value>
@@ -173,7 +173,7 @@
     <comment>jp translator: what's this?</comment>
   </data>
   <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>ObjectListView</value>

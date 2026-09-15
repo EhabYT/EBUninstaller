@@ -187,7 +187,7 @@ Použít celou cestu ke složce, jedna cesta na řádek. Neplatné cesty a neexi
     <value>Různé</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>BCUninstaller Nastavení</value>
+    <value>EBUninstaller Pro Nastavení</value>
   </data>
   <data name="checkBoxAutoLoad.Text" xml:space="preserve">
     <value>Automaticky otevřený seznam "Default.bcul" na startu</value>

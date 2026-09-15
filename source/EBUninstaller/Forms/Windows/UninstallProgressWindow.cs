@@ -64,7 +64,7 @@ namespace BulkCrapUninstaller.Forms
         {
             InitializeComponent();
 
-            Text += " - Bulk Crap Uninstaller";
+            Text += " - EBUninstaller Pro";
 
             Opacity = 0;
 

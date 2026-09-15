@@ -164,10 +164,10 @@
     <value>Tłumaczenia</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>O programie BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>O programie EBUninstaller Pro</value>
   </data>
   <data name="labelName.Text" xml:space="preserve">
-    <value>BCUninstaller (Bulk Crap Uninstaller)</value>
+    <value>EBUninstaller Pro</value>
   </data>
   <data name="linkLabel6.Text" xml:space="preserve">
     <value>DotNetZip</value>
