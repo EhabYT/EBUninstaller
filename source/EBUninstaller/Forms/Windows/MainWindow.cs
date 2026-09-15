@@ -2064,6 +2064,8 @@ namespace BulkCrapUninstaller.Forms
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Action Center Toast Notification Cache...", null, (s, e) => OpenToastNotificationCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Customer Experience (CEIP) & SQM Telemetry...", null, (s, e) => OpenCeipTelemetryCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("BranchCache & Peer Distribution Cache...", null, (s, e) => OpenBranchCacheCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Connected Devices Platform (CDP) Activity History...", null, (s, e) => OpenActivityHistoryCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Component Store Staging & CBS Servicing Cache...", null, (s, e) => OpenComponentStoreStagingCleaner()));
 
                 // Group 3: Advanced Removal & Multi-User
                 var menuUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
@@ -2076,6 +2078,7 @@ namespace BulkCrapUninstaller.Forms
                 menuUninstall.DropDownItems.Add(new ToolStripMenuItem("Software Version & Package Update Differ...", null, (s, e) => OpenSoftwareUpdateDiffer()));
                 menuUninstall.DropDownItems.Add(new ToolStripMenuItem("Process Handle & File Lock Resolver...", null, (s, e) => OpenProcessHandleUnlocker()));
                 menuUninstall.DropDownItems.Add(new ToolStripMenuItem("UWP / AppContainer Permissions & Sandbox Auditor...", null, (s, e) => OpenAppContainerAuditor()));
+                menuUninstall.DropDownItems.Add(new ToolStripMenuItem("Windows Subsystem for Android (WSA) Packages...", null, (s, e) => OpenWsaPackageUninstaller()));
 
                 // Group 4: Windows Services & Platform Tools
                 var menuWinManagement = new ToolStripMenuItem("Windows Services & Platform Configuration");
@@ -2098,6 +2101,7 @@ namespace BulkCrapUninstaller.Forms
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Bluetooth & Wireless Device Pairing Residuals...", null, (s, e) => OpenBluetoothPairingCleaner()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Firewall Port Matrix & Public Exposure Auditor...", null, (s, e) => OpenFirewallPortMatrix()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("COM+ Applications & Component Services...", null, (s, e) => OpenComPlusCatalogAuditor()));
+                menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
 
                 // Group 5: Backup, Security & Audit
                 var menuBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
@@ -2184,6 +2188,8 @@ namespace BulkCrapUninstaller.Forms
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Action Center Toast Notification Cache...", null, (s, e) => OpenToastNotificationCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Customer Experience (CEIP) & SQM Telemetry...", null, (s, e) => OpenCeipTelemetryCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("BranchCache & Peer Distribution Cache...", null, (s, e) => OpenBranchCacheCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Connected Devices Platform (CDP) Activity History...", null, (s, e) => OpenActivityHistoryCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Component Store Staging & CBS Servicing Cache...", null, (s, e) => OpenComponentStoreStagingCleaner()));
 
                     var tmUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
@@ -2195,6 +2201,7 @@ namespace BulkCrapUninstaller.Forms
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Software Version & Package Update Differ...", null, (s, e) => OpenSoftwareUpdateDiffer()));
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Process Handle & File Lock Resolver...", null, (s, e) => OpenProcessHandleUnlocker()));
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("UWP / AppContainer Permissions & Sandbox Auditor...", null, (s, e) => OpenAppContainerAuditor()));
+                    tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Windows Subsystem for Android (WSA) Packages...", null, (s, e) => OpenWsaPackageUninstaller()));
 
                     var tmWinManagement = new ToolStripMenuItem("Windows Services & Platform Configuration");
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Windows Services Startup Optimizer...", null, (s, e) => OpenServicesOptimizer()));
@@ -2216,6 +2223,7 @@ namespace BulkCrapUninstaller.Forms
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Bluetooth & Wireless Device Pairing Residuals...", null, (s, e) => OpenBluetoothPairingCleaner()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Firewall Port Matrix & Public Exposure Auditor...", null, (s, e) => OpenFirewallPortMatrix()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("COM+ Applications & Component Services...", null, (s, e) => OpenComPlusCatalogAuditor()));
+                    tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Winsock Protocol Catalog & Transport Providers...", null, (s, e) => OpenWinsockProtocolCatalog()));
 
                     var tmBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
@@ -2928,6 +2936,30 @@ namespace BulkCrapUninstaller.Forms
         private void OpenBranchCacheCleaner()
         {
             using var dlg = new BulkCrapUninstaller.Forms.Windows.BranchCacheCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenWsaPackageUninstaller()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.WsaPackageUninstallerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenActivityHistoryCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.ActivityHistoryCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenWinsockProtocolCatalog()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.WinsockProtocolCatalogWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenComponentStoreStagingCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.Windows.ComponentStoreStagingCleanerWindow();
             dlg.ShowDialog(this);
         }
         #endregion
