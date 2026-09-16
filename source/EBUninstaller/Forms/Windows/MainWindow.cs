@@ -2096,6 +2096,7 @@ namespace BulkCrapUninstaller.Forms
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Windows Font Cache & WPF Integrity Rebuilder...", null, (s, e) => OpenFontCacheRepair()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Most Recently Used (MRU) History & Explorer Traces...", null, (s, e) => OpenMruHistoryCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Taskbar Jump Lists & Recent Destinations Cleaner...", null, (s, e) => OpenJumpListCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem(".NET NGEN Native Image Compilation Optimizer...", null, (s, e) => OpenDotNetNgenOptimization()));
 
                 // Group 3: Advanced Removal & Multi-User
                 var menuUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
@@ -2135,6 +2136,8 @@ namespace BulkCrapUninstaller.Forms
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Print Spooler Health & Stuck Job Repair...", null, (s, e) => OpenPrintSpoolerRepair()));
                 menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("DNS Client Resolver Cache & Health Subsystem...", null, (s, e) => OpenDnsCacheHealth()));
+                menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Network Adapter NDIS Filters & Bindings Auditor...", null, (s, e) => OpenNetworkBindingAuditor()));
+                menuWinManagement.DropDownItems.Add(new ToolStripMenuItem("Windows Event Log Retention & Channel Manager...", null, (s, e) => OpenEventLogRetentionPolicy()));
 
                 // Group 5: Backup, Security & Audit
                 var menuBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
@@ -2150,6 +2153,7 @@ namespace BulkCrapUninstaller.Forms
                 menuBackup.DropDownItems.Add(new ToolStripMenuItem("CNG & CryptoAPI Cryptographic Providers Auditor...", null, (s, e) => OpenCngProviderAuditor()));
                 menuBackup.DropDownItems.Add(new ToolStripMenuItem("VSS Restore Point Storage Quota & Allocation...", null, (s, e) => OpenRestorePointQuota()));
                 menuBackup.DropDownItems.Add(new ToolStripMenuItem("Installed OEM Device Driver Backup...", null, (s, e) => OpenDeviceDriverBackup()));
+                menuBackup.DropDownItems.Add(new ToolStripMenuItem("Volume Shadow Copy (VSS) Writers Health Auditor...", null, (s, e) => OpenVssWriterHealthAuditor()));
 
                 proDropDown.DropDownItems.AddRange(new ToolStripItem[]
                 {
@@ -2232,6 +2236,7 @@ namespace BulkCrapUninstaller.Forms
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Windows Font Cache & WPF Integrity Rebuilder...", null, (s, e) => OpenFontCacheRepair()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Most Recently Used (MRU) History & Explorer Traces...", null, (s, e) => OpenMruHistoryCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Taskbar Jump Lists & Recent Destinations Cleaner...", null, (s, e) => OpenJumpListCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem(".NET NGEN Native Image Compilation Optimizer...", null, (s, e) => OpenDotNetNgenOptimization()));
 
                     var tmUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
@@ -2269,6 +2274,8 @@ namespace BulkCrapUninstaller.Forms
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("NetBIOS & WINS Name Resolution Cache Flusher...", null, (s, e) => OpenNetBiosCacheFlusher()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Print Spooler Health & Stuck Job Repair...", null, (s, e) => OpenPrintSpoolerRepair()));
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("DNS Client Resolver Cache & Health Subsystem...", null, (s, e) => OpenDnsCacheHealth()));
+                    tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Network Adapter NDIS Filters & Bindings Auditor...", null, (s, e) => OpenNetworkBindingAuditor()));
+                    tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Windows Event Log Retention & Channel Manager...", null, (s, e) => OpenEventLogRetentionPolicy()));
 
                     var tmBackup = new ToolStripMenuItem("Backup, Data Security & Audit Logs");
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("Backup & Recovery Center...", null, (s, e) => OpenBackupManager()));
@@ -2283,6 +2290,7 @@ namespace BulkCrapUninstaller.Forms
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("CNG & CryptoAPI Cryptographic Providers Auditor...", null, (s, e) => OpenCngProviderAuditor()));
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("VSS Restore Point Storage Quota & Allocation...", null, (s, e) => OpenRestorePointQuota()));
                     tmBackup.DropDownItems.Add(new ToolStripMenuItem("Installed OEM Device Driver Backup...", null, (s, e) => OpenDeviceDriverBackup()));
+                    tmBackup.DropDownItems.Add(new ToolStripMenuItem("Volume Shadow Copy (VSS) Writers Health Auditor...", null, (s, e) => OpenVssWriterHealthAuditor()));
 
                     toolsToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem("Quick System Optimization Wizard...", null, (s, e) => OpenOptimizationWizard()));
                     toolsToolStripMenuItem.DropDownItems.Insert(1, tmHealth);
@@ -3078,6 +3086,30 @@ namespace BulkCrapUninstaller.Forms
         private void OpenDnsCacheHealth()
         {
             using var dlg = new BulkCrapUninstaller.Forms.DnsClientCacheHealthWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenDotNetNgenOptimization()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.DotNetNgenOptimizationWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenNetworkBindingAuditor()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.NetworkAdapterBindingAuditorWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenEventLogRetentionPolicy()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.WindowsEventLogRetentionPolicyWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenVssWriterHealthAuditor()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.VssWriterHealthAuditorWindow();
             dlg.ShowDialog(this);
         }
 
