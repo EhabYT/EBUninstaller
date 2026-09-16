@@ -2050,6 +2050,7 @@ namespace BulkCrapUninstaller.Forms
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Security Center (WSC) Providers Auditor...", null, (s, e) => OpenWscProviderAuditor()));
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Memory Diagnostic & RAM Hardware Auditor...", null, (s, e) => OpenMemoryDiagnosticAudit()));
                 menuHealth.DropDownItems.Add(new ToolStripMenuItem("Connected Experiences & Telemetry (DiagTrack) Hardening...", null, (s, e) => OpenDiagTrackHardening()));
+                menuHealth.DropDownItems.Add(new ToolStripMenuItem("System Timer Resolution & Interrupt Profiler...", null, (s, e) => OpenSystemTimerResolution()));
 
                 // Group 2: Deep System Cleaning & Residuals
                 var menuCleaners = new ToolStripMenuItem("Deep System Cleaning & Residuals");
@@ -2098,6 +2099,8 @@ namespace BulkCrapUninstaller.Forms
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Taskbar Jump Lists & Recent Destinations Cleaner...", null, (s, e) => OpenJumpListCleaner()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem(".NET NGEN Native Image Compilation Optimizer...", null, (s, e) => OpenDotNetNgenOptimization()));
                 menuCleaners.DropDownItems.Add(new ToolStripMenuItem("GPU Vendor Shader & Pipeline Cache Cleaner (NVIDIA/AMD/Intel)...", null, (s, e) => OpenGpuDriverCacheCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("Terminal & Console Profile Registry Traces...", null, (s, e) => OpenTerminalConsoleProfilesCleaner()));
+                menuCleaners.DropDownItems.Add(new ToolStripMenuItem("DirectInput Game Controller Calibration Residuals...", null, (s, e) => OpenDirectInputProfileCleaner()));
 
                 // Group 3: Advanced Removal & Multi-User
                 var menuUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
@@ -2112,6 +2115,7 @@ namespace BulkCrapUninstaller.Forms
                 menuUninstall.DropDownItems.Add(new ToolStripMenuItem("UWP / AppContainer Permissions & Sandbox Auditor...", null, (s, e) => OpenAppContainerAuditor()));
                 menuUninstall.DropDownItems.Add(new ToolStripMenuItem("Windows Subsystem for Android (WSA) Packages...", null, (s, e) => OpenWsaPackageUninstaller()));
                 menuUninstall.DropDownItems.Add(new ToolStripMenuItem("Provisioned AppX Packages Deprovisioner (System-Wide)...", null, (s, e) => OpenAppxProvisionedRemover()));
+                menuUninstall.DropDownItems.Add(new ToolStripMenuItem("App Execution Aliases & App Paths Residuals...", null, (s, e) => OpenAppExecutionAliasManager()));
 
                 // Group 4: Windows Services & Platform Tools
                 var menuWinManagement = new ToolStripMenuItem("Windows Services & Platform Configuration");
@@ -2195,6 +2199,7 @@ namespace BulkCrapUninstaller.Forms
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Security Center (WSC) Providers Auditor...", null, (s, e) => OpenWscProviderAuditor()));
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Windows Memory Diagnostic & RAM Hardware Auditor...", null, (s, e) => OpenMemoryDiagnosticAudit()));
                     tmHealth.DropDownItems.Add(new ToolStripMenuItem("Connected Experiences & Telemetry (DiagTrack) Hardening...", null, (s, e) => OpenDiagTrackHardening()));
+                    tmHealth.DropDownItems.Add(new ToolStripMenuItem("System Timer Resolution & Interrupt Profiler...", null, (s, e) => OpenSystemTimerResolution()));
 
                     var tmCleaners = new ToolStripMenuItem("Deep System Cleaning & Residuals");
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("System Junk Cleaner...", null, (s, e) => OpenJunkCleaner()));
@@ -2242,6 +2247,8 @@ namespace BulkCrapUninstaller.Forms
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Taskbar Jump Lists & Recent Destinations Cleaner...", null, (s, e) => OpenJumpListCleaner()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem(".NET NGEN Native Image Compilation Optimizer...", null, (s, e) => OpenDotNetNgenOptimization()));
                     tmCleaners.DropDownItems.Add(new ToolStripMenuItem("GPU Vendor Shader & Pipeline Cache Cleaner (NVIDIA/AMD/Intel)...", null, (s, e) => OpenGpuDriverCacheCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("Terminal & Console Profile Registry Traces...", null, (s, e) => OpenTerminalConsoleProfilesCleaner()));
+                    tmCleaners.DropDownItems.Add(new ToolStripMenuItem("DirectInput Game Controller Calibration Residuals...", null, (s, e) => OpenDirectInputProfileCleaner()));
 
                     var tmUninstall = new ToolStripMenuItem("Advanced Removal & Package Management");
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Forced Application Removal...", null, (s, e) => OpenForcedRemoval()));
@@ -2255,6 +2262,7 @@ namespace BulkCrapUninstaller.Forms
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("UWP / AppContainer Permissions & Sandbox Auditor...", null, (s, e) => OpenAppContainerAuditor()));
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Windows Subsystem for Android (WSA) Packages...", null, (s, e) => OpenWsaPackageUninstaller()));
                     tmUninstall.DropDownItems.Add(new ToolStripMenuItem("Provisioned AppX Packages Deprovisioner (System-Wide)...", null, (s, e) => OpenAppxProvisionedRemover()));
+                    tmUninstall.DropDownItems.Add(new ToolStripMenuItem("App Execution Aliases & App Paths Residuals...", null, (s, e) => OpenAppExecutionAliasManager()));
 
                     var tmWinManagement = new ToolStripMenuItem("Windows Services & Platform Configuration");
                     tmWinManagement.DropDownItems.Add(new ToolStripMenuItem("Windows Services Startup Optimizer...", null, (s, e) => OpenServicesOptimizer()));
@@ -3142,6 +3150,30 @@ namespace BulkCrapUninstaller.Forms
         private void OpenRestorePointIntegrityAuditor()
         {
             using var dlg = new BulkCrapUninstaller.Forms.SystemRestorePointIntegrityAuditorWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenTerminalConsoleProfilesCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.TerminalColorPaletteProfilesCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenDirectInputProfileCleaner()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.DirectInputControllerProfileCleanerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenAppExecutionAliasManager()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.AppExecutionAliasManagerWindow();
+            dlg.ShowDialog(this);
+        }
+
+        private void OpenSystemTimerResolution()
+        {
+            using var dlg = new BulkCrapUninstaller.Forms.SystemTimerResolutionOptimizerWindow();
             dlg.ShowDialog(this);
         }
 
