@@ -58,6 +58,8 @@ namespace BulkCrapUninstaller.Forms
         private BulkCrapUninstaller.Controls.ModernNavCommandBar _modernNavCommandBar;
         private BulkCrapUninstaller.Controls.QuickFilterChipsBar _quickFilterChipsBar;
         private BulkCrapUninstaller.Controls.ModernStatsDashboard _modernStatsDashboard;
+        private BulkCrapUninstaller.Controls.ModernAppDetailsCard _modernAppDetailsCard;
+        private BulkCrapUninstaller.Controls.ModernSystemResourceMetricsBar _systemResourceMetricsBar;
 
         private bool _previousListLegendState = true;
         private bool _anyStoreApps;
@@ -1976,7 +1978,7 @@ namespace BulkCrapUninstaller.Forms
                 splitContainerListAndMap.Panel1.Controls.Add(_modernStatsDashboard);
                 _modernStatsDashboard.BringToFront();
 
-                // 4. Add AppDetailsPanel to Inspector Panel
+                // 4. Add AppDetailsPanel & ModernAppDetailsCard to Inspector Panel
                 _appDetailsPanel = new BulkCrapUninstaller.Controls.AppDetailsPanel();
                 _appDetailsPanel.RequestUninstall += (s, app) => _appUninstaller.RunUninstall(new[] { app }, _listView.AllUninstallers, false);
                 _appDetailsPanel.RequestForcedRemoval += (s, app) => OpenForcedRemoval(app?.InstallLocation ?? app?.DisplayName);
@@ -1985,16 +1987,36 @@ namespace BulkCrapUninstaller.Forms
                 splitContainerListAndMap.Panel1.Controls.Add(_appDetailsPanel);
                 _appDetailsPanel.BringToFront();
 
+                _modernAppDetailsCard = new BulkCrapUninstaller.Controls.ModernAppDetailsCard();
+                _modernAppDetailsCard.RequestUninstall += (s, app) => _appUninstaller.RunUninstall(new[] { app }, _listView.AllUninstallers, false);
+                _modernAppDetailsCard.RequestForcedRemoval += (s, app) => OpenForcedRemoval(app?.InstallLocation ?? app?.DisplayName);
+                _modernAppDetailsCard.RequestScanLeftovers += (s, app) => OpenJunkRemove(new[] { app });
+                _modernAppDetailsCard.RequestOpenFolder += (s, app) =>
+                {
+                    if (!string.IsNullOrEmpty(app?.InstallLocation) && Directory.Exists(app.InstallLocation))
+                    {
+                        try { System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = "explorer.exe", Arguments = $"\"{app.InstallLocation}\"", UseShellExecute = true }); } catch { }
+                    }
+                };
+                splitContainerListAndMap.Panel2.Controls.Add(_modernAppDetailsCard);
+                _modernAppDetailsCard.BringToFront();
+
+                // 4b. Add System Resource Metrics Bar
+                _systemResourceMetricsBar = new BulkCrapUninstaller.Controls.ModernSystemResourceMetricsBar();
+                Controls.Add(_systemResourceMetricsBar);
+                _systemResourceMetricsBar.BringToFront();
+
                 uninstallerObjectListView.SelectionChanged += (s, e) =>
                 {
                     var selected = _listView.SelectedUninstallers.FirstOrDefault();
-                    _appDetailsPanel.DisplayApplication(selected);
+                    _appDetailsPanel?.DisplayApplication(selected);
+                    _modernAppDetailsCard?.SetApplication(selected);
 
                     var allCount = _listView.AllUninstallers?.Count ?? 0;
                     var allSize = _listView.AllUninstallers?.Sum(x => x.EstimatedSize.GetKbSize() * 1024L) ?? 0;
                     var selCount = _listView.SelectedUninstallers?.Count ?? 0;
                     var selSize = _listView.SelectedUninstallers?.Sum(x => x.EstimatedSize.GetKbSize() * 1024L) ?? 0;
-                    _modernStatsDashboard.UpdateDashboard(allCount, allSize, selCount, selSize, 100);
+                    _modernStatsDashboard?.UpdateDashboard(allCount, allSize, selCount, selSize, 100);
                 };
 
                 // 5. Add Pro Tools Dropdown to ToolStrip
@@ -3057,6 +3079,35 @@ namespace BulkCrapUninstaller.Forms
         {
             using var dlg = new BulkCrapUninstaller.Forms.DnsClientCacheHealthWindow();
             dlg.ShowDialog(this);
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Control | Keys.F:
+                    filterEditor1?.Focus();
+                    return true;
+                case Keys.F5:
+                    RefreshUninstallList(false);
+                    return true;
+                case Keys.Control | Keys.J:
+                    OpenJunkCleaner();
+                    return true;
+                case Keys.Control | Keys.B:
+                    OpenBackupManager();
+                    return true;
+                case Keys.Control | Keys.M:
+                    OpenInstallationMonitor();
+                    return true;
+                case Keys.Control | Keys.H:
+                    OpenTargetWindow(this, EventArgs.Empty);
+                    return true;
+                case Keys.Control | Keys.P:
+                    OpenPrivacyCleaner();
+                    return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
         #endregion
     }
